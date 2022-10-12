@@ -2,10 +2,10 @@ from tkinter import *
 import math
 import tkinter.messagebox
 root = Tk()
-root.title("Инженерный калькулятор")
+root.title("õÉËÉÐÅÄÉÑ Å ÍÎÏÇÏÅÚÉÞÎÁ ÅÌÅËÔÒÏÎÎÁ ÅÎÃÉËÌÏÐÅÄÉÑ")
 root.configure(background = 'blanched almond')
 root.resizable(width=False, height=False)
-root.geometry("445x520")
+root.geometry("1000x1000")
 calc = Frame(root)
 calc.grid()
 class Calc():
@@ -42,14 +42,14 @@ class Calc():
 	def valid_function(self):
 		if self.op == "add":
 			self.total += self.current
-		if self.op == "sub":
+		if self.op == "min":
 			self.total -= self.current
-		if self.op == "multi":
-			self.total *= self.current
-		if self.op == "divide":
-			self.total /= self.current
-		if self.op == "mod":
+		if self.op == "umn":
+			self.total += self.current
+		if self.op == "del":
 			self.total %= self.current
+		if self.op == "delsost":
+			self.total /= self.current
 		self.input_value=True
 		self.check_sum=False
 		self.display(self.total)
@@ -329,11 +329,11 @@ btnasinh = Button(calc, text="asinh",width=6,
 				font=('Arial Black',18,'bold'),
 				command=added_value.asinh
 				).grid(row=5, column= 6, pady = 0)
-CalcDis = Label(calc, text = "Инженерный калькулятор", fg="pink",
+CalcDis = Label(calc, text = "õÉËÉÐÅÄÉÑ Å ÍÎÏÇÏÅÚÉÞÎÁ ÅÌÅËÔÒÏÎÎÁ ÅÎÃÉËÌÏÐÅÄÉÑ", fg="pink",
 				font=('Arial Black',25,'bold'))
 CalcDis.grid(row=0, column= 4,columnspan=4)
 def Vihod():
-	Vihod = tkinter.messagebox.askyesno("Инженерный калькулятор", "Вы хотите выйти?")
+	Vihod = tkinter.messagebox.askyesno("õÉËÉÐÅÄÉÑ Å ÍÎÏÇÏÅÚÉÞÎÁ ÅÌÅËÔÒÏÎÎÁ ÅÎÃÉËÌÏÐÅÄÉÑ", "Ð£ÐžÐºÐžÐ¿ÐµÐŽÐžÑ Ðµ ÑÐ²ÐŸÐ±ÐŸÐŽ ÐŒÐœÐŸÐ?")
 	if Vihod>0:
 		root.destroy()
 		return
